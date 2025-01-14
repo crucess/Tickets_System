@@ -1,10 +1,5 @@
 {
-    "mysqlDB": {
-		"host": "31.211.189.52",
-		"user": "crucess",
-		"password": "OzV4S1NchCXzkP8qNJZaQXR3C3F7l7IZlnpfN41g",
-		"port": 3306
-	},
+
     "info": {
         "embed": {
             "color": "#FF0000",
