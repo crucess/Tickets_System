@@ -4,6 +4,7 @@ const {
 	Partials,
 	Collection,
 } = require("discord.js");
+require('dotenv').config();
 
 const client = new Client({
 	intents: [
@@ -39,7 +40,7 @@ client.config = require("./config.json");
 );
 
 client
-	.login(client.config.secrets.discord_token)
+	.login(process.env.DISCORD_TOKEN)
 	.then(() => {
 		console.log("\x1b[32m%s\x1b[0m", "[discord] connected");
 		initialize();

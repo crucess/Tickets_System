@@ -1,7 +1,4 @@
 {
-    "secrets": {
-        "discord_token": "MTMyODc1ODc4ODc2NDk5NTY1NA.GvnngA.EcJVGys0nP1iN-a1Vp0A547Ogzf54vE5sSraN4"
-    },
     "mysqlDB": {
 		"host": "31.211.189.52",
 		"user": "crucess",
