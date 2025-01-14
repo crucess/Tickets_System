@@ -1,0 +1,25 @@
+{
+    "secrets": {
+        "discord_token": "MTMyODc1ODc4ODc2NDk5NTY1NA.GvnngA.EcJVGys0nP1iN-a1Vp0A547Ogzf54vE5sSraN4"
+    },
+    "mysqlDB": {
+		"host": "31.211.189.52",
+		"user": "crucess",
+		"password": "OzV4S1NchCXzkP8qNJZaQXR3C3F7l7IZlnpfN41g",
+		"port": 3306
+	},
+    "info": {
+        "embed": {
+            "color": "#FF0000",
+            "footer": "Tickets Manager",
+            "logo": "https://media.discordapp.net/attachments/875002585852043324/1267052492395642941/Aotb_2.png?ex=66a76216&is=66a61096&hm=b855edc68374b59e516b5cbdedf1482e0e516aa8c3e4ee3820a2edbcc94617b0&=&format=webp&quality=lossless"
+        },
+        "mainGuild": "802967840193773639",
+        "ownerId": "395569526474801152",
+        "prefix": "!"
+    },
+    "channels_logging": {
+        "comandos_usados": "1267051153061838858",
+        "premium_activated_log": "1241841345987874868"
+    }
+}
