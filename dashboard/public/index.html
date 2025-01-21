@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Tickets</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Ticket Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="panels.html">Gestionar Paneles</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Bienvenido al Dashboard</h1>
+        <p>Selecciona una opción en el menú para continuar.</p>
+
+        <!-- Estadísticas de Tickets -->
+        <div id="ticketStats" class="row g-3">
+            <!-- Los datos se rellenarán dinámicamente -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module">
+        import { fetchStats } from './scripts/api.js';
+
+        // Cargar estadísticas al inicio
+        document.addEventListener('DOMContentLoaded', async () => {
+            const stats = await fetchStats();
+            const statsContainer = document.getElementById('ticketStats');
+
+            const statsData = [
+                { title: 'Tickets Abiertos', value: stats.openTickets, color: 'primary' },
+                { title: 'Tickets Cerrados', value: stats.closedTickets, color: 'success' },
+                { title: 'Tickets Abandonados', value: stats.abandonedTickets, color: 'warning' },
+                { title: 'Usuarios con Tickets', value: stats.activeUsers, color: 'info' },
+            ];
+
+            statsData.forEach(stat => {
+                const card = document.createElement('div');
+                card.className = 'col-md-3';
+                card.innerHTML = `
+                    <div class="card text-bg-${stat.color} mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">${stat.title}</h5>
+                            <p class="card-text">${stat.value}</p>
+                        </div>
+                    </div>
+                `;
+                statsContainer.appendChild(card);
+            });
+        });
+    </script>
+</body>
+</html>

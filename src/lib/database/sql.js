@@ -7,6 +7,8 @@ const pool = mysql.createPool({
   user: process.env.MYSQL_USER,
   password: process.env.MYSQL_PASSWORD,
   port: process.env.MYSQL_PORT,
+  supportBigNumbers: true, // Maneja números grandes
+  bigNumberStrings: true,  // Devuelve BIGINT como cadenas
 });
 
 module.exports = {

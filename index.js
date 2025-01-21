@@ -28,6 +28,8 @@ const { loadCommands } = require("./src/lib/handlers/commandHandler");
 const { loadPrefixCommands } = require("./src/lib/handlers/prefixCommandHandler");
 const { initialize } = require("./src/lib/database/initialize");
 
+const ticketActivityMonitor = require('./src/Jobs/ticketActivityMonitor');
+
 client.commands = new Collection();
 client.prefixCommands = new Collection();
 client.config = require("./config.json");
@@ -47,5 +49,6 @@ client
 		loadEvents(client);
 		loadCommands(client);
 		loadPrefixCommands(client);
+		ticketActivityMonitor(client);
 	})
 	.catch((err) => console.log(err));
